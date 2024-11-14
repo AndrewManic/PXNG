@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  /* Style for the video background */
+  #background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place it behind the game */
+  }
+  
+  /* Game Container */
+  .game-container {
+    position: relative;
+    width: 80vw;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Slight transparency */
+    border: 2px solid #fff;
+    z-index: 1; /* Ensure it stays above the video */
+  }
+  
+  /* Neon Pulse Animation */
+  @keyframes neonPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px 2px var(--neon-color), 0 0 30px 6px var(--neon-color), 0 0 45px 12px var(--neon-color);
+    }
+    50% {
+      box-shadow: 0 0 25px 10px var(--neon-color), 0 0 50px 20px var(--neon-color), 0 0 70px 30px var(--neon-color);
+    }
+  }
+  
+  /* Paddle Styling with Neon Effect */
+  .paddle {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background-color: #fff;
+    animation: neonPulse 2s infinite;
+  }
+  
+  #paddle1 {
+    left: 20px;
+  }
+  
+  #paddle2 {
+    right: 20px;
+  }
+  
+  /* Set initial neon color */
+  .paddle {
+    --neon-color: #8A2BE2; /* Initial neon color */
+  }
+  
+  /* Ball Styling with Rainbow Neon Glow */
+  #ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: rainbowGlow 2s infinite, impactGlow 0.2s ease-out;
+  }
+  
+  /* Rainbow Glow Effect for Ball */
+  @keyframes rainbowGlow {
+    0% { box-shadow: 0 0 10px #FF5733, 0 0 20px #FF5733, 0 0 30px #FF5733; }
+    25% { box-shadow: 0 0 10px #FFBD33, 0 0 20px #FFBD33, 0 0 30px #FFBD33; }
+    50% { box-shadow: 0 0 10px #75FF33, 0 0 20px #75FF33, 0 0 30px #75FF33; }
+    75% { box-shadow: 0 0 10px #335BFF, 0 0 20px #335BFF, 0 0 30px #335BFF; }
+    100% { box-shadow: 0 0 10px #A833FF, 0 0 20px #A833FF, 0 0 30px #A833FF; }
+  }
+  
+  /* Impact Brightness Effect */
+  @keyframes impactGlow {
+    from { filter: brightness(1.5); }
+    to { filter: brightness(1); }
+  }
+  
+  /* Menu Styling */
+  .menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+  }
+  
+  #play-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #play-button:hover {
+    background-color: #45a049;
+  }
+  
+  #level-display {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Score Display */
+  #score {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  /* Start and Victory Overlays */
+  .start-overlay, .victory-overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+  }
+  
+  /* Start and Next Buttons */
+  #start-button, #next-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #8A2BE2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #start-button:hover, #next-button:hover {
+    color: #fff;
+    box-shadow: 0 0 15px 5px var(--neon-color);
+  }
+  

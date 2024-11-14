@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PXNG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Video Background -->
+  <video autoplay muted loop id="background-video">
+    <source src="pxng_bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="pxng_song.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Start Button Overlay -->
+  <div class="start-overlay">
+    <button id="start-button">START</button>
+  </div>
+
+  <!-- Victory Message Overlay -->
+  <div class="victory-overlay" style="display: none;">
+    <div class="victory-message" id="victory-message">Epic!</div>
+    <button id="next-button">NEXT</button>
+  </div>
+
+  <!-- Game Menu with Play/Pause Button -->
+  <div class="menu">
+    <button id="play-button">Play Music</button>
+    <div id="level-display">Level: <span id="level">1</span></div>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <div id="score">
+      <span id="player1-score">0</span> - <span id="player2-score">0</span>
+    </div>
+    <div id="ball"></div>
+    <div id="paddle1" class="paddle"></div>
+    <div id="paddle2" class="paddle"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
